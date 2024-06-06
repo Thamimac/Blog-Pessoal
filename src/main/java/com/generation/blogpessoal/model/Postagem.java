@@ -40,6 +40,21 @@ public class Postagem {
 	@ManyToOne // criar o relacionamento de que muitas postagens podem pertencer a um tema
 	@JsonIgnoreProperties("postagem") //ignorando as postagens na lista de tema, para nao dar loop infinito
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+	
+	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 
 	public Tema getTema() {
